@@ -2555,6 +2555,57 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__C
         return handler
     }
 }
+private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationData: WindowsFoundation.IID {
+    .init(Data1: 0xabafe590, Data2: 0x65fe, Data3: 0x520a, Data4: ( 0x9d,0x7c,0x6a,0xb5,0xf1,0x88,0x22,0x37 ))// abafe590-65fe-520a-9d7c-6ab5f1882237
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationData {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataVTable: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.ApplicationData?>? = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.unwrapFrom(abi: ComPtr($1))
+        let asyncStatus: WindowsFoundation.AsyncStatus = $2
+        __unwrapped__instance(asyncInfo, asyncStatus)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataBridge>
+internal class AsyncOperationCompletedHandlerApplicationData: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationData }
+
+    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.ApplicationData?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+        let asyncInfoWrapper = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper(asyncInfo)
+        let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationData.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _asyncInfo, asyncStatus))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<UWP.ApplicationData?>
+    internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationData
+    internal typealias SwiftABI = UWP.AsyncOperationCompletedHandlerApplicationData
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (asyncInfo, asyncStatus) in
+            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+        }
+        return handler
+    }
+}
 private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CFileProperties__CBasicProperties: WindowsFoundation.IID {
     .init(Data1: 0xc8659aae, Data2: 0x4926, Data3: 0x52ad, Data4: ( 0x8f,0x60,0xd8,0x9f,0xe5,0xa8,0xdf,0x5f ))// c8659aae-4926-52ad-8f60-d89fe5a8df5f
 }
@@ -7333,6 +7384,93 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, UWP.BitmapTypedValue?>?>? {
+        try! _default.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer: WindowsFoundation.IID {
+    .init(Data1: 0xa785be1d, Data2: 0x159e, Data3: 0x53ad, Data4: ( 0x95,0x53,0x59,0x8b,0x03,0xdc,0xa0,0x48 ))// a785be1d-159e-53ad-9553-598b03dca048
+}
+
+internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.Storage.ApplicationDataContainer>>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = UWP.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge>
+internal class IIterableIKeyValuePairString_ApplicationDataContainer: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer }
+
+    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer
+    internal typealias SwiftABI = IIterableIKeyValuePairString_ApplicationDataContainer
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl : IIterable, AbiInterfaceImpl {
+    typealias T = WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?
+    typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?>? {
         try! _default.FirstImpl()
     }
 
@@ -16794,6 +16932,135 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WindowsFoundation.AnyIKeyValuePair<String, UWP.BitmapTypedValue?>? {
+        get { try! _default.get_CurrentImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrentImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer: WindowsFoundation.IID {
+    .init(Data1: 0xaf3c131d, Data2: 0x67aa, Data3: 0x5c8d, Data4: ( 0xae,0x0e,0x27,0x2b,0xa2,0x4a,0xe7,0x4f ))// af3c131d-67aa-5c8d-ae0e-272ba24ae74f
+}
+
+internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.Storage.ApplicationDataContainer>>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        let resultWrapper = UWP.__x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+)
+typealias __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge>
+internal class IIteratorIKeyValuePairString_ApplicationDataContainer: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer }
+
+    internal func get_CurrentImpl() throws -> WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.unwrapFrom(abi: result)
+    }
+
+    internal func get_HasCurrentImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func MoveNextImpl() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer
+    internal typealias SwiftABI = IIteratorIKeyValuePairString_ApplicationDataContainer
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl : IIterator, AbiInterfaceImpl {
+    typealias T = WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?
+    typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNextImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>? {
         get { try! _default.get_CurrentImpl() }
     }
 
@@ -26976,6 +27243,113 @@ fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CGraphic
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer: WindowsFoundation.IID {
+    .init(Data1: 0x5adbc543, Data2: 0x2170, Data3: 0x5ad9, Data4: ( 0xb3,0x5e,0x96,0x8c,0xdb,0x78,0xfb,0x30 ))// 5adbc543-2170-5ad9-b35e-968cdb78fb30
+}
+
+internal var __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable: __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IKeyValuePair`2<String, Windows.Storage.ApplicationDataContainer>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Key: {
+        guard let __unwrapped__instance = __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.key
+        $1?.initialize(to: try! HString(result).detach())
+        return S_OK
+    },
+
+    get_Value: {
+        guard let __unwrapped__instance = __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.value
+        result?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge>
+internal class IKeyValuePairString_ApplicationDataContainer: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer }
+
+    internal func get_KeyImpl() throws -> String {
+        var result: HSTRING?
+        _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func get_ValueImpl() throws -> UWP.ApplicationDataContainer? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Value(pThis, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer
+    internal typealias SwiftABI = IKeyValuePairString_ApplicationDataContainer
+    internal typealias SwiftProjection = WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl : IKeyValuePair, AbiInterfaceImpl {
+    typealias K = String
+    typealias V = UWP.ApplicationDataContainer?
+    typealias Bridge = __x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.key)
+    fileprivate var key : String {
+        get { try! _default.get_KeyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.value)
+    fileprivate var value : UWP.ApplicationDataContainer? {
+        get { try! _default.get_ValueImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CStreams__CRandomAccessStreamReference: WindowsFoundation.IID {
     .init(Data1: 0xe5195792, Data2: 0xaeab, Data3: 0x56e8, Data4: ( 0xbd,0x30,0x13,0x72,0xc4,0x34,0x0b,0xf6 ))// e5195792-aeab-56e8-bd30-1372c4340bf6
 }
@@ -28782,6 +29156,172 @@ fileprivate class __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CGraphics__CI
     private lazy var _IIterable: IIterableIKeyValuePairString_BitmapTypedValue! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, UWP.BitmapTypedValue?>?>? {
+        try! _IIterable.FirstImpl()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer: WindowsFoundation.IID {
+    .init(Data1: 0x13624f8d, Data2: 0x85cc, Data3: 0x5780, Data4: ( 0xa7,0x8d,0x64,0xdb,0xa5,0x8f,0x2c,0x3c ))// 13624f8d-85cc-5780-a78d-64dba58f2c3c
+}
+
+internal var __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable: __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.IID
+        iids[3] = UWP.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IMapView`2<String, Windows.Storage.ApplicationDataContainer>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    Lookup: {
+        guard let __unwrapped__instance = __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let key: String = .init(from: $1)
+        let result = __unwrapped__instance.lookup(key)
+        result?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    HasKey: {
+        guard let __unwrapped__instance = __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let key: String = .init(from: $1)
+        let result = __unwrapped__instance.hasKey(key)
+        $2?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    Split: {
+        guard let __unwrapped__instance = __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var first: WindowsFoundation.AnyIMapView<String, UWP.ApplicationDataContainer?>?
+        var second: WindowsFoundation.AnyIMapView<String, UWP.ApplicationDataContainer?>?
+        __unwrapped__instance.split(&first, &second)
+        let firstWrapper = UWP.__x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper(first)
+        firstWrapper?.copyTo($1)
+        let secondWrapper = UWP.__x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper(second)
+        secondWrapper?.copyTo($2)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge>
+internal class IMapViewString_ApplicationDataContainer: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer }
+
+    internal func LookupImpl(_ key: String) throws -> UWP.ApplicationDataContainer? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            let _key = try! HString(key)
+            _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.Lookup(pThis, _key.get(), &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+    internal func get_SizeImpl() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    internal func HasKeyImpl(_ key: String) throws -> Bool {
+        var result: boolean = 0
+        let _key = try! HString(key)
+        _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.HasKey(pThis, _key.get(), &result))
+        }
+        return .init(from: result)
+    }
+
+    internal func SplitImpl(_ first: inout WindowsFoundation.AnyIMapView<String, UWP.ApplicationDataContainer?>?, _ second: inout WindowsFoundation.AnyIMapView<String, UWP.ApplicationDataContainer?>?) throws {
+        let (_first, _second) = try ComPtrs.initialize { (_firstAbi, _secondAbi) in
+            _ = try perform(as: __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.Split(pThis, &_firstAbi, &_secondAbi))
+            }
+        }
+        first = UWP.__x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.unwrapFrom(abi: _first)
+        second = UWP.__x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerWrapper.unwrapFrom(abi: _second)
+    }
+
+}
+
+internal enum __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainer
+    internal typealias SwiftABI = IMapViewString_ApplicationDataContainer
+    internal typealias SwiftProjection = WindowsFoundation.AnyIMapView<String, UWP.ApplicationDataContainer?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerImpl : IMapView, AbiInterfaceImpl {
+    typealias T = WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?
+    typealias K = String
+    typealias V = UWP.ApplicationDataContainer?
+    typealias Bridge = __x_ABI_C__FIMapView_2_HSTRING___x_ABI_CWindows__CStorage__CApplicationDataContainerBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.lookup)
+    fileprivate func lookup(_ key: String) -> UWP.ApplicationDataContainer? {
+        try! _default.LookupImpl(key)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.haskey)
+    fileprivate func hasKey(_ key: String) -> Bool {
+        try! _default.HasKeyImpl(key)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.split)
+    fileprivate func split(_ first: inout WindowsFoundation.AnyIMapView<String, UWP.ApplicationDataContainer?>?, _ second: inout WindowsFoundation.AnyIMapView<String, UWP.ApplicationDataContainer?>?) {
+        try! _default.SplitImpl(&first, &second)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_SizeImpl() }
+    }
+
+    private lazy var _IIterable: IIterableIKeyValuePairString_ApplicationDataContainer! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.imapview-2.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, UWP.ApplicationDataContainer?>?>? {
         try! _IIterable.FirstImpl()
     }
 
@@ -64596,6 +65136,159 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CSecurity__CEn
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationData: WindowsFoundation.IID {
+    .init(Data1: 0x31456b58, Data2: 0xa5cb, Data3: 0x5c5b, Data4: ( 0xbd,0x6e,0xcc,0xce,0x3a,0x7b,0xf4,0xb4 ))// 31456b58-a5cb-5c5b-bd6e-ccce3a7bf4b4
+}
+
+internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataVTable: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IAsyncInfoWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IAsyncOperation`1<Windows.Storage.ApplicationData>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    put_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let handler = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        __unwrapped__instance.completed = handler
+        return S_OK
+    },
+
+    get_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.completed
+        let resultWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    GetResults: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let result = try __unwrapped__instance.getResults()
+            result?.copyTo($1)
+            return S_OK
+        } catch { return failWith(err: E_FAIL) } 
+    }
+)
+typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataBridge>
+internal class IAsyncOperationApplicationData: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationData }
+
+    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<UWP.ApplicationData?>?) throws {
+        let handlerWrapper = UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper(handler)
+        let _handler = try! handlerWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationData.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.put_Completed(pThis, _handler))
+        }
+    }
+
+    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<UWP.ApplicationData?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationData.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
+            }
+        }
+        return UWP.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CApplicationDataWrapper.unwrapFrom(abi: result)
+    }
+
+    internal func GetResultsImpl() throws -> UWP.ApplicationData? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationData.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
+            }
+        }
+        return .from(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationData
+    internal typealias SwiftABI = IAsyncOperationApplicationData
+    internal typealias SwiftProjection = WindowsFoundation.AnyIAsyncOperation<UWP.ApplicationData?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataImpl : IAsyncOperation, AbiInterfaceImpl {
+    typealias TResult = UWP.ApplicationData?
+    typealias Bridge = __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CApplicationDataBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
+    fileprivate func getResults() throws -> UWP.ApplicationData? {
+        try _default.GetResultsImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
+    fileprivate var completed : AsyncOperationCompletedHandler<UWP.ApplicationData?>? {
+        get { try! _default.get_CompletedImpl() }
+        set { try! _default.put_CompletedImpl(newValue) }
+    }
+
+    private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
+    fileprivate func cancel() throws {
+        try _IAsyncInfo.CancelImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
+    fileprivate func close() throws {
+        try _IAsyncInfo.CloseImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
+    fileprivate var errorCode : HRESULT {
+        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
+    fileprivate var id : UInt32 {
+        get { try! _IAsyncInfo.get_IdImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
+    fileprivate var status : WindowsFoundation.AsyncStatus {
+        get { try! _IAsyncInfo.get_StatusImpl() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CFileProperties__CBasicProperties: WindowsFoundation.IID {
     .init(Data1: 0x5186131a, Data2: 0x4467, Data3: 0x504b, Data4: ( 0x97,0x7a,0x07,0x85,0xa8,0x23,0x04,0x85 ))// 5186131a-4467-504b-977a-0785a8230485
 }
@@ -72561,6 +73254,57 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CNetworking__C
     internal typealias Handler = WindowsFoundation.TypedEventHandler<UWP.DownloadOperation?, UWP.BackgroundTransferRangesDownloadedEventArgs?>
     internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CNetworking__CBackgroundTransfer__CDownloadOperation___x_ABI_CWindows__CNetworking__CBackgroundTransfer__CBackgroundTransferRangesDownloadedEventArgs
     internal typealias SwiftABI = UWP.TypedEventHandlerDownloadOperation_BackgroundTransferRangesDownloadedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try! _default.InvokeImpl(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectable: WindowsFoundation.IID {
+    .init(Data1: 0xb5348b3b, Data2: 0x5081, Data3: 0x5ae9, Data4: ( 0x8f,0xa3,0x4d,0x22,0xd6,0x8f,0xb0,0xea ))// b5348b3b-5081-5ae9-8fa3-4d22d68fb0ea
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectable {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &UWP.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: UWP.ApplicationData? = .from(abi: ComPtr($1))
+        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+        __unwrapped__instance(sender, args)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableWrapper = InterfaceWrapperBase<UWP.__x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableBridge>
+internal class TypedEventHandlerApplicationData_Any: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectable }
+
+    internal func InvokeImpl(_ sender: UWP.ApplicationData?, _ args: Any?) throws {
+        let argsWrapper = __ABI_.AnyWrapper(args)
+        let _args = try! argsWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectable.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), _args))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectableBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<UWP.ApplicationData?, Any?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CWindows__CStorage__CApplicationData_IInspectable
+    internal typealias SwiftABI = UWP.TypedEventHandlerApplicationData_Any
 
     internal static func from(abi: ComPtr<CABI>?) -> Handler? {
         guard let abi = abi else { return nil }

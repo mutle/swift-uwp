@@ -22,6 +22,8 @@
     "Windows.Media.Core.MediaSource",
     "Windows.Media.Render",
     "Windows.Media.Playback.MediaPlayer",
+    "Windows.Storage.ApplicationData",
+    "Windows.Storage.StorageFolder",
     "Windows.Storage.Streams",
     "Windows.Storage.Pickers",
     "Windows.System.Launcher",
