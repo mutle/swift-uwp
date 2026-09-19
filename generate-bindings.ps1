@@ -71,6 +71,23 @@ function Copy-Project {
             Remove-Item -Path $ProjectDir -Recurse -Force
         }
         Copy-Item -Path $OutputLocation\Sources\$ProjectName -Destination $ProjectDir -Recurse -Force
+        if ($ProjectName -eq "UWP") {
+            Add-WindowsGuards -ProjectDir $ProjectDir
+        }
+    }
+}
+
+function Add-WindowsGuards {
+    param(
+        [string]$ProjectDir
+    )
+
+    Get-ChildItem -Path $ProjectDir -Filter *.swift -Recurse | ForEach-Object {
+        $Content = Get-Content -Path $_.FullName -Raw
+        if (-not $Content.StartsWith("#if os(Windows)")) {
+            $Content = $Content.TrimEnd()
+            Set-Content -Path $_.FullName -Value "#if os(Windows)`n$Content`n#endif`n" -NoNewline
+        }
     }
 }
 

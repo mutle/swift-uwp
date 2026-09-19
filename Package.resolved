@@ -1,22 +1,20 @@
 {
-  "originHash" : "87b823bf428bf29843bad40e40c43d37980939762ee3b554613a42d08873af6f",
+  "originHash" : "f492b064c95ade24ff609e83ffbba81e423365eb7dac45290d0873f8dbf73edf",
   "pins" : [
     {
       "identity" : "swift-cwinrt",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/thebrowsercompany/swift-cwinrt",
+      "location" : "https://github.com/mutle/swift-cwinrt",
       "state" : {
-        "branch" : "main",
-        "revision" : "3e3d5a0270ebe8fb0bc738d24d4786a6cd0621eb"
+        "revision" : "a5988c9ec83d9ae1f1a4cd83051127f625ff60f7"
       }
     },
     {
       "identity" : "swift-windowsfoundation",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/thebrowsercompany/swift-windowsfoundation",
+      "location" : "https://github.com/mutle/swift-windowsfoundation",
       "state" : {
-        "branch" : "main",
-        "revision" : "dbe14563b6bb0eb9c761d8aff7f465afddf185f9"
+        "revision" : "a112318dc42f2031b18a7a2db5d03fc46f452449"
       }
     }
   ],
