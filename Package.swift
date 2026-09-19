@@ -10,11 +10,11 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/mutle/swift-cwinrt",
-            revision: "e9db556eb47958cd904366647b1a45c831cbc38f"
+            revision: "a5988c9ec83d9ae1f1a4cd83051127f625ff60f7"
         ),
         .package(
             url: "https://github.com/mutle/swift-windowsfoundation",
-            revision: "04ba0d2f81c2cf137147de485619fa5a5d3ab974"
+            revision: "a112318dc42f2031b18a7a2db5d03fc46f452449"
         ),
     ],
     targets: [
